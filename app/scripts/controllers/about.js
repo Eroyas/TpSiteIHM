@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the pooIhmExemplesApp
  */
-angular.module('pooIhmExemplesApp')
+angular.module('tpSiteIHMApp')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
