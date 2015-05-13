@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name pooIhmExemplesApp.controller:MainCtrl
+ * @name tpSiteIHMApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the pooIhmExemplesApp
+ * Controller of the tpSiteIHMApp
  */
 angular.module('tpSiteIHMApp')
   .controller('MainCtrl', function ($scope) {

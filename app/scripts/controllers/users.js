@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name pooIhmExemplesApp.controller:AboutCtrl
+ * @name tpSiteIHMApp.controller:UsersCtrl
  * @description
- * # AboutCtrl
- * Controller of the pooIhmExemplesApp
+ * # UsersCtrl
+ * Controller of the tpSiteIHMApp
  */
 angular.module('tpSiteIHMApp')
   .controller('UsersCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
@@ -15,17 +15,20 @@ angular.module('tpSiteIHMApp')
       'Karma'
     ];
 
-    $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users')
-      .success(function(data) {
-        $scope.users = data.data;
-      });
+    $(".tab-users").hide();
 
-    if($routeParams.userId) {
-      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users/' + $routeParams.userId)
-      .success(function(data) {
-        if (data.status == "success") {
-          $scope.currentUser = data.data;
-        }
-      });
-    }
+    $(".navbar, .navbar-header, .btn-navbar").click(function() {
+      $('.tab-users').fadeOut();
+    })
+
+    $("#btn-add").click(function() {
+      $('.tab-users').hide();
+      $('#table-add').fadeIn();
+    })
+
+    $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users')
+    .success(function(data) {
+      $scope.users = data.data;
+    });
+
   }]);
