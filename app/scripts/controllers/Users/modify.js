@@ -8,7 +8,7 @@
  * Controller of the tpSiteIHMApp
  */
 angular.module('tpSiteIHMApp')
-  .controller('ModifyCtrl', ['$scope', '$http', '$routeParams', 'Users', function ($scope, $http, $routeParams, Users) {
+  .controller('ModifyCtrl', ['$scope', '$http', '$routeParams', '$location', 'Users', function ($scope, $http, $routeParams, $location, Users) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

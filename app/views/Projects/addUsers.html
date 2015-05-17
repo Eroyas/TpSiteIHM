@@ -1,0 +1,31 @@
+<br>
+
+<h3>Ajout d'un utilisateur : </h3>
+
+<br>
+
+<div>
+  <form role="form">
+    <div class="tab-projects table-responsive">
+      <table class="table ">
+        <div class="form-group">
+          <label for="inputAddUser">Choisir l'utilisateur</label>
+          <select class="form-control" id="inputAddUser" ng-options="(user.name + ' ' + user.surname) for user in users" ng-model="user"></select>
+        </div>
+        <div class="form-group">
+          <label for="inputAddRole">Rôle</label>
+          <input type="text" class="form-control" id="inputAddRole" placeholder="Rôle" ng-model="role.name">
+        </div>
+        <button type="submit" class="btn btn-success btn-lg btn-block" ng-click="sendData()">Valider</button>
+      </table>
+    </div>
+  </form>
+
+  <br><br>
+
+  <a ng-href="#/projects" class="btn btn-primary" role="button" alt="retour" title="Retour">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    Retour
+  </a>
+
+</div>

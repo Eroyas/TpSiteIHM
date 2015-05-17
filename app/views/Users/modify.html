@@ -1,25 +1,33 @@
 <br><br>
 
 <div>
-  <form>
-    <div id="table-modify" class="tab-users table-responsive">
+  <form role="form">
+    <div class="tab-users table-responsive">
       <table class="table">
         <div class="form-group">
           <label for="firstnameInputModify">Prénom</label>
-          <input type="text" class="form-control" id="firstnameInputModify" placeholder="Prénom">
+          <input type="text" class="form-control" id="firstnameInputModify" placeholder="Prénom" ng-model="user.name">
         </div>
         <div class="form-group">
           <label for="lastnameInputModify">Nom de famille</label>
-          <input type="input" class="form-control" id="lastnameInputModify" placeholder="Nom de famille">
+          <input type="text" class="form-control" id="lastnameInputModify" placeholder="Nom de famille" ng-model="user.surname">
         </div>
-        <button type="submit" class="btn btn-success" ng-click="sendData()">Valider</button>
+        <div class="form-group">
+          <label for="emailInputModify">Email</label>
+          <input type="email" class="form-control" id="emailInputModify" placeholder="Email" ng-model="user.email">
+        </div>
+        <div class="form-group">
+          <label for="websiteInputModify">Website</label>
+          <input type="text" class="form-control" id="websiteInputModify" placeholder="Website" ng-model="user.website">
+        </div>
+        <button type="submit" class="btn btn-success btn-lg btn-block" ng-click="sendData()">Valider</button>
       </table>
     </div>
   </form>
 
   <br><br>
 
-  <a href="#/users" class="btn btn-primary" role="button" alt="retour" title="Retour">
+  <a ng-href="#/users" class="btn btn-primary" role="button" alt="retour" title="Retour">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     Retour
   </a>

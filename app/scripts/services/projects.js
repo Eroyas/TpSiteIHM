@@ -5,9 +5,9 @@
  * @name tpSiteIHMApp
  */
 angular.module('tpSiteIHMApp')
-  .service('Users', ['$http', function Users($http){
+  .service('Projects', ['$http', function Projects($http){
     this.getAll = function(successCB, errorCB) {
-      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users/')
+      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Projects/')
         .success(function(data) {
           if (data.status === 'success') {
             successCB(data.data);
@@ -18,8 +18,8 @@ angular.module('tpSiteIHMApp')
       );
     };
 
-    this.get = function(userId, successCB, errorCB) {
-      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users/' + userId)
+    this.get = function(projectId, successCB, errorCB) {
+      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Projects/' + projectId)
         .success(function(data) {
           if (data.status === 'success') {
             successCB(data.data);
@@ -30,8 +30,8 @@ angular.module('tpSiteIHMApp')
       );
     };
 
-    this.add = function(user, successCB, errorCB) {
-      $http.post('http://poo-ihm-2015-rest.herokuapp.com/api/Users', user)
+    this.add = function(project, successCB, errorCB) {
+      $http.post('http://poo-ihm-2015-rest.herokuapp.com/api/Projects', project)
         .success(function(data) {
           if (data.status === 'success') {
             successCB(data.data);
@@ -42,8 +42,8 @@ angular.module('tpSiteIHMApp')
       );
     };
 
-    this.edit = function(user, successCB, errorCB) {
-      $http.put('http://poo-ihm-2015-rest.herokuapp.com/api/Users/' + user.id, user)
+    this.edit = function(project, successCB, errorCB) {
+      $http.put('http://poo-ihm-2015-rest.herokuapp.com/api/Projects/' + project.id, project)
         .success(function(data) {
           if (data.status === 'success') {
             successCB(data.data);
@@ -54,8 +54,8 @@ angular.module('tpSiteIHMApp')
       );
     };
 
-    this.delete = function(userId, successCB, errorCB) {
-      $http.delete('http://poo-ihm-2015-rest.herokuapp.com/api/Users/' + userId)
+    this.delete = function(projectId, successCB, errorCB) {
+      $http.delete('http://poo-ihm-2015-rest.herokuapp.com/api/Projects/' + projectId)
         .success(function(data) {
           if (data.status === 'success') {
             successCB(data.data);
@@ -66,8 +66,8 @@ angular.module('tpSiteIHMApp')
       );
     };
 
-    this.getRoles = function(userId, successCB, errorCB) {
-      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users/' + userId + '/Roles/')
+    this.getRoles = function(projectId, successCB, errorCB) {
+      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Projects/' + projectId + '/Roles/')
         .success(function(data) {
           if (data.status === 'success') {
             successCB(data.data);
@@ -78,8 +78,8 @@ angular.module('tpSiteIHMApp')
       );
     };
 
-    this.getProjects = function(userProjectsId, successCB, errorCB) {
-      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Projects/' + userProjectsId)
+    this.getUsers = function(roleUsersId, successCB, errorCB) {
+      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users/' + roleUsersId)
         .success(function(data) {
           if (data.status === 'success') {
             successCB(data.data);
@@ -90,7 +90,7 @@ angular.module('tpSiteIHMApp')
       );
     };
 
-    this.addProjects = function(role, successCB, errorCB) {
+    this.addUsers = function(role, successCB, errorCB) {
       $http.post('http://poo-ihm-2015-rest.herokuapp.com/api/Roles/', role)
         .success(function(data) {
           if (data.status === 'success') {

@@ -42,8 +42,9 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#/">Home</a></li>
+            <li class="active"><a ng-href="#/">Home</a></li>
             <li><a ng-href="#/users">Utilisateurs</a></li>
+            <li><a ng-href="#/projects">Projets</a></li>
           </ul>
         </div>
       </div>
@@ -112,11 +113,22 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/users.js"></script>
-    <script src="scripts/controllers/show.js"></script>
-    <script src="scripts/controllers/modify.js"></script>
-    <script src="scripts/controllers/delete.js"></script>
+    
+    <!-- partie users -->
+    <script src="scripts/controllers/Users/users.js"></script>
+    <script src="scripts/controllers/Users/show.js"></script>
+    <script src="scripts/controllers/Users/modify.js"></script>
+    <script src="scripts/controllers/Users/delete.js"></script>
+    <script src="scripts/controllers/Users/addProjects.js"></script>
     <script src="scripts/services/users.js"></script>
+    
+    <!-- partie projects -->
+    <script src="scripts/controllers/Projects/projects.js"></script>
+    <script src="scripts/controllers/Projects/projectsShow.js"></script>
+    <script src="scripts/controllers/Projects/projectsModify.js"></script>
+    <script src="scripts/controllers/Projects/projectsDelete.js"></script>
+    <script src="scripts/controllers/Projects/addUsers.js"></script>
+    <script src="scripts/services/projects.js"></script>
     <!-- endbuild -->
   </body>
 </html>

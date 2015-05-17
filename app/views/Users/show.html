@@ -1,23 +1,63 @@
-<br><br>
+<br>
 
 <div>
 
-  <p>Name: {{currentUser.name}}</p>
-  <p>Surname: {{currentUser.surname}}</p>
-  <p>Email: {{currentUser.email}}</p>
-  <p>Website: {{currentUser.website}}</p>
+  <h3>Prénom : {{ currentUser.name }}</h3>
+  <h3>Nom : {{ currentUser.surname }}</h3>
+  <h3>Email : {{ currentUser.email }}</h3>
+  <h3>Website : {{ currentUser.website }}</h3>
 
-  <br><br>
+  <a ng-href="#/add/projects/{{ currentUser.id }}" class="btn btn-primary btn-lg pull-right" role="button" alt="retour" title="Ajouter un projet">
+    Ajouter un projet
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </a>
 
-  <p>Projet: {{currentUserProject.title}}</p>
-  <p>Role: {{currentUserRole.name}}</p>
-  <p>Année: {{currentUserProject.year}}</p>
-  <p>{{currentUserProject.description}}</p>
+  <h3>Liste de ses projets :</h3>
 
+  <br>
+  
+  <div class="list-projects">
 
-  <br><br>
+    <div class="jumbotron table-responsive">
 
-  <a href="#/users" class="btn btn-primary" role="button" alt="retour" title="Retour">
+      <table class="table table-hover table-bordered">
+        <tr>
+          <td><h3>Nom du projet</h3></td>
+          <td><h3>Description</h3></td>
+          <td><h3>Rôle</h3></td>
+          <td><h3>Voir</h3></td>
+        </tr>
+        <tr ng-repeat="project in projects">
+          <td>
+            <a ng-href="#/show/projects/{{ project.id }}" class="btn" role="button" alt="voir" title="Voir">
+              {{ project.title }}
+            </a>
+          </td>
+          <td>
+            <a class="btn" alt="description" title="Description">
+              {{ project.description }}
+            </a>
+          </td>
+          <td>
+            <a class="btn" alt="rôle" title="Rôle">
+              {{ project.role }}
+            </a>
+          </td>
+          <td>
+            <a ng-href="#/show/projects/{{ project.id }}" class="btn btn-info" role="button" alt="voir" title="Voir">
+              <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+            </a>
+          </td>         
+        </tr>
+      </table>
+    
+    </div>
+  
+  </div>
+
+  <br>
+
+  <a ng-href="#/users" class="btn btn-primary" role="button" alt="retour" title="Retour">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     Retour
   </a>
